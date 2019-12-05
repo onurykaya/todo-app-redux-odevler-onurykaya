@@ -1,25 +1,35 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {setFilter, removeTodo} from "./actionCreators/actionCreaters";
+import {removeTodo, toggleCompleteStatus} from "./actionCreators/actionCreaters";
 
-function Todo(props) {
-    const {content, id, checked} = props;
+class Todo extends Component {
+
+    render() {
+    const {content, id, checked, handleNotification} = this.props;
     let itemClass= "todo-item";
     if(checked){
         itemClass += " checked";
     }
-    return (
-        <div className={itemClass} onClick={() => {props.onCheckedToggle(id);}}>
-            {content}
-            <span
-                className="remove-todo"
-                onClick={(e) => {e.stopPropagation();props.removeTodo(id)}}>X</span>
-        </div>
-    );
+        return(
+            <div>
+                
+                <div className={itemClass} onClick={() => {this.props.toggleCompleteStatus(id);}}>
+                {content}
+                <span
+                    className="remove-todo"
+                    onClick={(e) => {e.stopPropagation();this.props.removeTodo(id); handleNotification()}}>X</span>
+            </div>
+            </div>
+        );
+    }
 }
 
+
+
 const mapDispatchToProps = dispatch => ({
-    removeTodo: (id) => {dispatch(removeTodo(id))}
+    removeTodo: (id) => {dispatch(removeTodo(id))},
+    toggleCompleteStatus: (id) => {dispatch(toggleCompleteStatus(id))},
+    
 });
 
 export default connect(null, mapDispatchToProps)(Todo);

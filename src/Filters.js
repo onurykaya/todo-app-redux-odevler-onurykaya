@@ -16,8 +16,9 @@ class Filters extends Component {
                 options.map((option) => {
                     return <div onClick={() => {
                         this.props.changeFilter(option.labelKey);
+                       
                     }}>
-                        {option.label}
+                       <p className="option-button">{option.label}</p> 
                     </div>
                 })
             }
