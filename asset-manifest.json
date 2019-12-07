@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/todo-app-redux-odevler-onurykaya/static/css/main.3b3d84a9.chunk.css",
+    "main.js": "/todo-app-redux-odevler-onurykaya/static/js/main.d588f6d5.chunk.js",
+    "main.js.map": "/todo-app-redux-odevler-onurykaya/static/js/main.d588f6d5.chunk.js.map",
+    "runtime-main.js": "/todo-app-redux-odevler-onurykaya/static/js/runtime-main.df6598e2.js",
+    "runtime-main.js.map": "/todo-app-redux-odevler-onurykaya/static/js/runtime-main.df6598e2.js.map",
+    "static/js/2.17b57811.chunk.js": "/todo-app-redux-odevler-onurykaya/static/js/2.17b57811.chunk.js",
+    "static/js/2.17b57811.chunk.js.map": "/todo-app-redux-odevler-onurykaya/static/js/2.17b57811.chunk.js.map",
+    "index.html": "/todo-app-redux-odevler-onurykaya/index.html",
+    "precache-manifest.629ccdf08ace1414910acb7bf46c1fdc.js": "/todo-app-redux-odevler-onurykaya/precache-manifest.629ccdf08ace1414910acb7bf46c1fdc.js",
+    "service-worker.js": "/todo-app-redux-odevler-onurykaya/service-worker.js",
+    "static/css/main.3b3d84a9.chunk.css.map": "/todo-app-redux-odevler-onurykaya/static/css/main.3b3d84a9.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.df6598e2.js",
+    "static/js/2.17b57811.chunk.js",
+    "static/css/main.3b3d84a9.chunk.css",
+    "static/js/main.d588f6d5.chunk.js"
+  ]
+}
