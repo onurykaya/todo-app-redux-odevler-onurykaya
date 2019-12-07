@@ -5,7 +5,7 @@ import {removeTodo, toggleCompleteStatus} from "./actionCreators/actionCreaters"
 class Todo extends Component {
 
     render() {
-    const {content, id, checked, handleNotification} = this.props;
+    const {content, id, checked} = this.props;
     let itemClass= "todo-item";
     if(checked){
         itemClass += " checked";
@@ -17,7 +17,7 @@ class Todo extends Component {
                 {content}
                 <span
                     className="remove-todo"
-                    onClick={(e) => {e.stopPropagation();this.props.removeTodo(id); handleNotification()}}>X</span>
+                    onClick={(e) => {e.stopPropagation();this.props.removeTodo(id)}}>X</span>
             </div>
             </div>
         );

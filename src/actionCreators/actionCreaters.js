@@ -9,15 +9,24 @@ export function setTodos(todos){
 }
 
 export function addTodo(todo){
-    return {type: ADD_TODO, todo}
+    return(dispatch) =>{
+        dispatch({type: ADD_TODO, todo})
+        dispatch(showNotification(`${todo.content} Eklendi`))
+    }
 }
 
 export function removeTodo(id){
-    return {type: REMOVE_TODO, id}
+    return(dispatch) => {
+        dispatch({type: REMOVE_TODO, id})
+        dispatch(showNotification(`Silindi`))
+    }
 }
 
-export function removeAllTodos(todos){
-    return {type: REMOVE_ALL_TODO, todos}
+export function removeAllTodos(){
+    return(dispatch) => {
+        dispatch({type: REMOVE_ALL_TODO})
+        dispatch(showNotification(`Hepsi Silindi `))
+    }
 }
 
 export function toggleCompleteStatus(id){
@@ -25,7 +34,12 @@ export function toggleCompleteStatus(id){
 }
 
 export function showNotification(notificationStatus) {
-    return {type: SHOW_NOTIFICATION, notificationStatus }
+    return (dispatch) => {
+        dispatch({type: SHOW_NOTIFICATION, notificationStatus })
+        setTimeout(()=>{
+            dispatch(hideNotification());
+        }, 2000);
+    }
 }
 
 export function hideNotification(){

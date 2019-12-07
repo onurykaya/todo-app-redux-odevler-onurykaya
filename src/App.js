@@ -42,6 +42,11 @@ class App extends Component {
       console.log("App props", this.props);
     return (
         <div className="App" id="todo">
+            {
+                this.props.show &&  <div style={{"background": "black", "color": "white", "padding": "15px", "fontSize": "20px"}}>
+                    {this.props.notificationStatus}
+                </div>
+            }
             <div className="todo-list todo-list-add">
                 <h3>Todo Ekle / Sil</h3>
                 <div>
@@ -58,7 +63,9 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
   activeFilter: state.activeFilter,
-  todos: state.todos
+  todos: state.todos,
+  show: state.show,
+  notificationStatus: state.notificationStatus
 });
 
 const mapDispatchToProps = dispatch => ({
